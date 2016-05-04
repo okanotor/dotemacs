@@ -1,0 +1,20 @@
+# -*- mode: snippet -*-
+# name: template_func
+# key: template_func
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# --
+#+TITLE: $0
+#+OPTIONS: ^:nil
+#+STARTUP: showall
+
+* 概要
+- にて定義
+- xxx
+
+* 引数
+
+* 実装
+#+INCLUDE: "$1" src $2 :lines "$3-$4"
+
+* 呼出元
+-

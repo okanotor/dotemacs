@@ -1,0 +1,13 @@
+/etc/inits
+/etc/inits-local/*.el
+/etc/sqliterc
+/lib/elisp/auto-install
+/lib/elisp/el-get
+/lib/elisp/elpa
+/lib/elisp/other
+/opt
+/tmp
+/usr/local/src/emacs*
+/usr/local/src/sqlite*
+/var
+

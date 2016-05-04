@@ -1,0 +1,14 @@
+;;; init-loader-files-alist.el --- file list loading at initializing emacs -*- mode: emacs-lisp; coding: utf-8-unix -*-
+
+;;; Commentary:
+;; 初期ロード対象の init ファイル一覧
+;; このファイルを編集してセーブし、 M-x update-init-loader-files-symlink を
+;; 実行することで、対象ファイルの
+;; 1. シンボリックリンクの再作成
+;; 2. コンパイル
+;; を実行する。
+
+;;; Code:
+
+(setq init-loader-files-alist nil)
+

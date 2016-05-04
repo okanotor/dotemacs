@@ -1,0 +1,11 @@
+--- rcodetools.el.org	2014-02-01 14:00:36.000000000 +0900
++++ rcodetools.el	2014-02-01 22:01:16.000000000 +0900
+@@ -22,7 +22,7 @@
+ 
+ (defadvice comment-dwim (around rct-hack activate)
+   "If comment-dwim is successively called, add => mark."
+-  (if (and (eq major-mode 'ruby-mode)
++  (if (and (or (eq major-mode 'ruby-mode) (eq major-mode 'enh-ruby-mode))
+            (eq last-command 'comment-dwim)
+            ;; TODO =>check
+            )

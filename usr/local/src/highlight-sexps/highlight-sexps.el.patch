@@ -1,0 +1,58 @@
+--- highlight-sexps.el.org	2012-02-01 09:41:57.000000000 +0900
++++ highlight-sexps.el	2014-03-15 20:40:44.000000000 +0900
+@@ -110,17 +110,23 @@
+   "Highlight the nested s-expressions around point"
+   (unless (= (point) hl-sexp-last-point)
+     (setq hl-sexp-last-point (point))
+-    (let ((overlays hl-sexp-overlays)
+-		  (sexp-list (hl-sexp-end-points (point) 
++    (let* ((overlays hl-sexp-overlays)
++           (sexp-list (hl-sexp-end-points (point) 
+ 										 (length hl-sexp-overlays)))
+-          pos1 pos2)
++           (num (min (length overlays) (length sexp-list)))
++           pos1 pos2)
+ 	  (condition-case err
+ 		  (while (and overlays sexp-list)
+ 			(let* ((overlay (pop overlays))
+ 				   (sexp (pop sexp-list))
+ 				   (pos1 (car sexp))
+ 				   (pos2 (cadr sexp)))
+-			  (move-overlay overlay pos1 pos2)))
++			  (move-overlay overlay pos1 pos2)
++              (setq num (- num 1))
++              (setq attributes (hl-sexp-face-attributes num))
++              (when attributes
++                (overlay-put overlay 'face attributes))
++              ))
+ 		(error nil))
+       (dolist (ov overlays)
+         (move-overlay ov 1 1)))))
+@@ -185,12 +191,26 @@
+   (let (results prev next
+ 		(p pt))
+ 	(dotimes (i n (nreverse results))
+-	  (setq prev (hl-sexp-start-of-sexp p))
++      (setq prev (hl-sexp-start-of-sexp (+ p (if (eq ?\( (char-after)) 1 0))))
+ 	  (when prev
+ 		(setq next (hl-sexp-end-of-sexp prev))
+ 		(when next
+ 		  (push (list prev next) results)
+ 		  (setq p (1- prev)))))))
+ 
++(defun hl-sexp-face-attributes (n)
++  "Get nth face attributes."
++  (cond
++   ((< n 0) nil)
++   ((>= n (max (length hl-sexp-colors) (length hl-sexp-background-colors))) nil)
++   (t
++    (setq attributes (face-attr-construct 'hl-sexp-face))
++    (when (< n (length hl-sexp-colors))
++      (setq attributes (plist-put attributes :foreground (nth n hl-sexp-colors))))
++    (when (< n (length hl-sexp-background-colors))
++      (setq attributes (plist-put attributes :background (nth n hl-sexp-background-colors))))
++    attributes
++    )))
++
+ ;;; highlight-sexps.el ends here
+ 

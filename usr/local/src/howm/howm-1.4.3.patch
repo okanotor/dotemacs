@@ -1,0 +1,342 @@
+diff -r -u a/en/0000-00-00-000000.txt b/en/0000-00-00-000000.txt
+--- a/en/0000-00-00-000000.txt	2015-12-31 22:41:45.000000000 +0900
++++ b/en/0000-00-00-000000.txt	2016-05-02 08:36:07.000000000 +0900
+@@ -1,4 +1,4 @@
+-= <<< %menu%
++* <<< %menu%
+  %"e"[Remember] %"c"[New] %"D"[Dup] Search(%"s"[String] %"g"[Regexp] %"o"[Occur])
+  %"a"[All] %"l"[Recent] %"A"[Around] %"y"[Schedule] %"t"[Todo] %"b"[Buffers] %"x"[Marks]
+  %"K"[<Title] [<Name] %"d"[Date>] %"i"[Key>] %"r"[Update] %"w"[Random Walk] [Killall]
+@@ -25,12 +25,12 @@
+ (Numbers after marks are default values.)
+ 
+ How to remember:
+-* Schedule at(@) the date
+-* Reminder sinks down(-).
+-* Todo floats up(+).
+-* Deadline needs attention!
+-* Defer waves(~) up and down.
+-* Done is the end(.).
++- Schedule at(@) the date
++- Reminder sinks down(-).
++- Todo floats up(+).
++- Deadline needs attention!
++- Defer waves(~) up and down.
++- Done is the end(.).
+ 
+ -------------------------------------
+ 
+@@ -38,28 +38,28 @@
+ >>> %Editing Menu%
+ 
+ 
+-= <<< %Editing Menu%
++* <<< %Editing Menu%
+ [Edit Menu] Hit RET on the left button to edit this menu.
+ [Update Menu] Hit RET on the left button to update this menu.
+ --------------------------------------------------------
+ 
+-*** Format of the menu file ***
++--- Format of the menu file ---
+ (Please hit RET on [Edit Menu] and read the source file.)
+ 
+-== Basic format
++** Basic format
+ 
+ As you see...
+ 
+-* [xxx] is button.
+-* %REMINDER (in small letters) is schedule and todo list.
+-* %RECENT (in small letters) is list of recent entries.
+-* %RANDOM (in small letters) is list of random entries.
++- [xxx] is button.
++- %REMINDER (in small letters) is schedule and todo list.
++- %RECENT (in small letters) is list of recent entries.
++- %RANDOM (in small letters) is list of random entries.
+ 
+ You can arrange their places as you like.
+ Writing favorite files or goto links may be also convenient.
+ (ex) file:///etc/services   >>> wiki
+ 
+-== Shortcut
++** Shortcut
+ 
+ %"foo"[All]
+ This is displayed as foo[All], and the key "f" executes [All].
+@@ -69,7 +69,7 @@
+ %"bar%"
+ If you put % at the tail like this, the key "b" means "move cursor here".
+ 
+-== For lispers
++** For lispers
+ 
+ Display:
+ %here%howm-congrats-count ;; embed value of variable howm-congrats-count
+@@ -83,13 +83,13 @@
+ %call%find-file  ;; call function interactively
+ Both are evaluated in the previous buffer before raising menu.
+ 
+-== Hiding
++** Hiding
+ 
+ '%' + '|' toggles invisibility
+ like this: visible%|invisible%|appear%|disappear  - until the end of line
+ (Newline is removed when the end of line is invisible.)
+ 
+-== Multiple menus
++** Multiple menus
+ 
+ Links to %xxx% open "<< < %xxx%" with menu-mode: >>> %menu%
+ When you add new menu, [[%menu%]] may be more convenient because corresponding
+diff -r -u a/howm-lang-ja.el b/howm-lang-ja.el
+--- a/howm-lang-ja.el	2016-05-02 08:37:46.000000000 +0900
++++ b/howm-lang-ja.el	2016-05-02 08:38:20.000000000 +0900
+@@ -1,5 +1,5 @@
+ ;;; howm-lang-ja.el --- Wiki-like note-taking tool
+-;;; -*- Coding: iso-2022-7bit -*-
++;;; -*- Coding: utf-8 -*-
+ ;;; Copyright (C) 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2015
+ ;;;   HIRAOKA Kazuyuki <khi@users.sourceforge.jp>
+ ;;; $Id: howm-lang-ja.el,v 1.11 2011-12-31 15:07:29 hira Exp $
+diff -r -u a/howm-menu-en.el b/howm-menu-en.el
+--- a/howm-menu-en.el	2015-12-31 22:41:45.000000000 +0900
++++ b/howm-menu-en.el	2016-05-02 08:44:54.000000000 +0900
+@@ -3,7 +3,7 @@
+ 
+ (require 'howm-vars)
+ 
+-(howm-defconst-risky howm-menu-en "= <<< %menu%
++(howm-defconst-risky howm-menu-en "* <<< %menu%
+  %\"e\"[Remember] %\"c\"[New] %\"D\"[Dup] Search(%\"s\"[String] %\"g\"[Regexp] %\"o\"[Occur])
+  %\"a\"[All] %\"l\"[Recent] %\"A\"[Around] %\"y\"[Schedule] %\"t\"[Todo] %\"b\"[Buffers] %\"x\"[Marks]
+  %\"K\"[<Title] [<Name] %\"d\"[Date>] %\"i\"[Key>] %\"r\"[Update] %\"w\"[Random Walk] [Killall]
+@@ -30,12 +30,12 @@
+ (Numbers after marks are default values.)
+ 
+ How to remember:
+-* Schedule at(@) the date
+-* Reminder sinks down(-).
+-* Todo floats up(+).
+-* Deadline needs attention!
+-* Defer waves(~) up and down.
+-* Done is the end(.).
++- Schedule at(@) the date
++- Reminder sinks down(-).
++- Todo floats up(+).
++- Deadline needs attention!
++- Defer waves(~) up and down.
++- Done is the end(.).
+ 
+ -------------------------------------
+ 
+@@ -43,28 +43,28 @@
+ >>> %Editing Menu%
+ 
+ 
+-= <<< %Editing Menu%
++* <<< %Editing Menu%
+ [Edit Menu] Hit RET on the left button to edit this menu.
+ [Update Menu] Hit RET on the left button to update this menu.
+ --------------------------------------------------------
+ 
+-*** Format of the menu file ***
++--- Format of the menu file ---
+ (Please hit RET on [Edit Menu] and read the source file.)
+ 
+-== Basic format
++** Basic format
+ 
+ As you see...
+ 
+-* [xxx] is button.
+-* %REMINDER (in small letters) is schedule and todo list.
+-* %RECENT (in small letters) is list of recent entries.
+-* %RANDOM (in small letters) is list of random entries.
++- [xxx] is button.
++- %REMINDER (in small letters) is schedule and todo list.
++- %RECENT (in small letters) is list of recent entries.
++- %RANDOM (in small letters) is list of random entries.
+ 
+ You can arrange their places as you like.
+ Writing favorite files or goto links may be also convenient.
+ (ex) file:///etc/services   >>> wiki
+ 
+-== Shortcut
++** Shortcut
+ 
+ %\"foo\"[All]
+ This is displayed as foo[All], and the key \"f\" executes [All].
+@@ -74,7 +74,7 @@
+ %\"bar%\"
+ If you put % at the tail like this, the key \"b\" means \"move cursor here\".
+ 
+-== For lispers
++** For lispers
+ 
+ Display:
+ %here%howm-congrats-count ;; embed value of variable howm-congrats-count
+@@ -88,13 +88,13 @@
+ %call%find-file  ;; call function interactively
+ Both are evaluated in the previous buffer before raising menu.
+ 
+-== Hiding
++** Hiding
+ 
+ '%' + '|' toggles invisibility
+ like this: visible%|invisible%|appear%|disappear  - until the end of line
+ (Newline is removed when the end of line is invisible.)
+ 
+-== Multiple menus
++** Multiple menus
+ 
+ Links to %xxx% open \"<< < %xxx%\" with menu-mode: >>> %menu%
+ When you add new menu, [[%menu%]] may be more convenient because corresponding
+diff -r -u a/howm-menu-ja.el b/howm-menu-ja.el
+--- a/howm-menu-ja.el	2016-05-02 08:45:50.000000000 +0900
++++ b/howm-menu-ja.el	2016-05-02 08:48:51.000000000 +0900
+@@ -1,10 +1,10 @@
+-;;; -*- Coding: iso-2022-7bit -*-
++;;; -*- Coding: utf-8 -*-
+ ;;; automatically generated from ja/0000-00-00-000000.txt
+ ;;; by howm-mkmenu.el.
+ 
+ (require 'howm-vars)
+ 
+-(howm-defconst-risky howm-menu-ja "= <<< %menu%
++(howm-defconst-risky howm-menu-ja "* <<< %menu%
+  %\"e\"[速記] %\"c\"[新規] %\"D\"[複製] 検索(%\"s\"[固定] %\"g\"[正規] %\"m\"[roma] %\"o\"[バ内]) %\":\"[昨日] %\".\"[今日]
+  %\"a\"[一覧] %\"l\"[最近] %\"A\"[前後] %\"h\"[履歴] %\"y\"[予定] %\"t\"[Todo] %\"b\"[全バ] %\"x\"[mark] %\"w\"[酔歩] [設定]
+  %\"K\"[題↑] [名↑] %\"d\"[日↓] %\"T\"[時↓] %\"i\"[鍵↓] %\"r\"[更新] %\"R\"[menu 更新] [menu 編集] [全消]
+@@ -44,7 +44,7 @@
+ メモが増えてきたら…           >>> %高速化について%
+ 
+ 
+-= <<< %ボタンの説明%
++* <<< %ボタンの説明%
+ 
+ ◆ 作成
+ 
+@@ -56,7 +56,7 @@
+ [一覧] → 全メモの一覧
+ [最近] → 最近のメモの連結表示
+ [前後] → 前後のメモ (見てたメモを中心に全メモの日付順一覧)
+-* 対象ファイルを(編集モードで)開いた状態からメニューを呼ぶこと
++- 対象ファイルを(編集モードで)開いた状態からメニューを呼ぶこと
+ [履歴] → 検索履歴
+ [予定] → 予定表
+ [todo] → todo 一覧
+@@ -64,8 +64,8 @@
+ ◆ 検索
+ 
+ [正規] → 正規表現の検索
+-* 基本的には大文字小文字の区別なし
+-  * 「Wiki」のように明示的に大文字を指定したときは区別
++- 基本的には大文字小文字の区別なし
++  - 「Wiki」のように明示的に大文字を指定したときは区別
+ [固定] → キーワードを補完入力して固定文字列の検索
+ [roma] → ローマ字検索 (migemo)
+ [今日] → 今日のメモ
+@@ -75,12 +75,12 @@
+ 
+ [更新] → 下線を引きなおす
+ [鍵↓] → キーワードを補完入力して貼りつけ
+-* Tips: M-v で候補一覧に移って migemo 検索すると楽
++- Tips: M-v で候補一覧に移って migemo 検索すると楽
+ 
+ [日↓] → 今日の日付 [yyyy-mm-dd] を貼りつけ
+ [時↓] → 今日の日時 [yyyy-mm-dd HH:MM] を貼りつけ
+ [題↑] → 現メモのタイトルを kill ring へ (C-y で貼りつけ)
+-* タイトルがみつからなかったときはファイル名
++- タイトルがみつからなかったときはファイル名
+ [名↑] → ファイル名を kill ring へ
+ 
+ ◆ 特別
+@@ -90,7 +90,7 @@
+ [全消] → howm-mode なバッファをすべて消す (未保存は除く)
+ [酔歩] → ランダムにリンクをたどって自動閲覧. C-g で停止.
+ 
+-= <<< %高速化について%
++* <<< %高速化について%
+ 
+ メモが増えて検索が遅くなってきたら, 高速化のためのオプション設定を
+ 検討してください.
+@@ -113,7 +113,7 @@
+ [設定] から「Howm Efficiency」の項目を参照ください.
+ 
+ 
+-= <<< %メニューの編集について%
++* <<< %メニューの編集について%
+ [menu 編集] でこのメニューを編集
+ [menu 更新] でこのメニューを更新
+ --------------------------------------------------------
+diff -r -u a/ja/0000-00-00-000000.txt b/ja/0000-00-00-000000.txt
+--- a/ja/0000-00-00-000000.txt	2016-05-02 08:54:56.000000000 +0900
++++ b/ja/0000-00-00-000000.txt	2016-05-02 08:50:46.000000000 +0900
+@@ -1,4 +1,4 @@
+-= <<< %menu%
++* <<< %menu%
+  %"e"[速記] %"c"[新規] %"D"[複製] 検索(%"s"[固定] %"g"[正規] %"m"[roma] %"o"[バ内]) %":"[昨日] %"."[今日]
+  %"a"[一覧] %"l"[最近] %"A"[前後] %"h"[履歴] %"y"[予定] %"t"[Todo] %"b"[全バ] %"x"[mark] %"w"[酔歩] [設定]
+  %"K"[題↑] [名↑] %"d"[日↓] %"T"[時↓] %"i"[鍵↓] %"r"[更新] %"R"[menu 更新] [menu 編集] [全消]
+@@ -38,7 +38,7 @@
+ メモが増えてきたら…           >>> %高速化について%
+ 
+ 
+-= <<< %ボタンの説明%
++* <<< %ボタンの説明%
+ 
+ ◆ 作成
+ 
+@@ -50,7 +50,7 @@
+ [一覧] → 全メモの一覧
+ [最近] → 最近のメモの連結表示
+ [前後] → 前後のメモ (見てたメモを中心に全メモの日付順一覧)
+-* 対象ファイルを(編集モードで)開いた状態からメニューを呼ぶこと
++- 対象ファイルを(編集モードで)開いた状態からメニューを呼ぶこと
+ [履歴] → 検索履歴
+ [予定] → 予定表
+ [todo] → todo 一覧
+@@ -58,8 +58,8 @@
+ ◆ 検索
+ 
+ [正規] → 正規表現の検索
+-* 基本的には大文字小文字の区別なし
+-  * 「Wiki」のように明示的に大文字を指定したときは区別
++- 基本的には大文字小文字の区別なし
++  - 「Wiki」のように明示的に大文字を指定したときは区別
+ [固定] → キーワードを補完入力して固定文字列の検索
+ [roma] → ローマ字検索 (migemo)
+ [今日] → 今日のメモ
+@@ -69,12 +69,12 @@
+ 
+ [更新] → 下線を引きなおす
+ [鍵↓] → キーワードを補完入力して貼りつけ
+-* Tips: M-v で候補一覧に移って migemo 検索すると楽
++- Tips: M-v で候補一覧に移って migemo 検索すると楽
+ 
+ [日↓] → 今日の日付 [yyyy-mm-dd] を貼りつけ
+ [時↓] → 今日の日時 [yyyy-mm-dd HH:MM] を貼りつけ
+ [題↑] → 現メモのタイトルを kill ring へ (C-y で貼りつけ)
+-* タイトルがみつからなかったときはファイル名
++- タイトルがみつからなかったときはファイル名
+ [名↑] → ファイル名を kill ring へ
+ 
+ ◆ 特別
+@@ -84,7 +84,7 @@
+ [全消] → howm-mode なバッファをすべて消す (未保存は除く)
+ [酔歩] → ランダムにリンクをたどって自動閲覧. C-g で停止.
+ 
+-= <<< %高速化について%
++* <<< %高速化について%
+ 
+ メモが増えて検索が遅くなってきたら, 高速化のためのオプション設定を
+ 検討してください.
+@@ -107,7 +107,7 @@
+ [設定] から「Howm Efficiency」の項目を参照ください.
+ 
+ 
+-= <<< %メニューの編集について%
++* <<< %メニューの編集について%
+ [menu 編集] でこのメニューを編集
+ [menu 更新] でこのメニューを更新
+ --------------------------------------------------------

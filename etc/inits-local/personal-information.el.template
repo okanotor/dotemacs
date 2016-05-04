@@ -1,0 +1,15 @@
+;;; personal-information.el --- setting for personal information -*- mode: emacs-lisp; coding: utf-8-unix -*-
+
+;;; Commentary:
+;; 個人情報の設定
+
+;;; Code:
+
+;; ユーザー名
+(setq user-full-name "Your Name")
+
+;; メールアドレス
+(setq user-mail-address "your-address@example.com")
+
+;; personal-information.el ends here
+
