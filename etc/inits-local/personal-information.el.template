@@ -11,5 +11,8 @@
 ;; メールアドレス
 (setq user-mail-address "your-address@example.com")
 
+;; メモディレクトリ
+(setq my-memo-dir "/path/to/memo_dir")
+
 ;; personal-information.el ends here
 
