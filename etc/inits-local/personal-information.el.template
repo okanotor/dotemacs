@@ -14,5 +14,8 @@
 ;; メモディレクトリ
 (setq my-memo-dir "/path/to/memo_dir")
 
+;; ネットワーク接続可否
+(setq can-connect-network t)
+
 ;; personal-information.el ends here
 
