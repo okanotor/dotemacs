@@ -14,7 +14,7 @@
   (defvar can-connect-network t)
   (if can-connect-network
       (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
-    (add-to-list 'package-archives '("local" . (expand-file-name (locate-user-emacs-file "var/cache/elpa"))))
+    (setq package-archives `(("local" . ,(expand-file-name (locate-user-emacs-file "var/cache/elisp")))))
     )
   (package-initialize)
 
@@ -61,7 +61,6 @@
       ruby-additional
       ruby-block
       ruby-electric
-      ruby-end
       rvm
       scheme-complete
       sicp
