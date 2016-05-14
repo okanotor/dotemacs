@@ -7,6 +7,11 @@
 ;;
 ;; inf-ruby, enhance-ruby-mode は **-autoloads.el で設定しているので、ここでの設定は不要
 ;;
+;; 使用前に、以下の gem を事前にインストールしておく
+;; - rcodetools
+;; - pry
+;; - pry-doc
+;;
 ;; @see http://blog.shibayu36.org/entry/2013/03/18/192651
 
 ;;; Code:
@@ -69,7 +74,22 @@
     (setq inf-ruby-eval-binding "Pry.toplevel_binding")
     ;; ri などのエスケープシーケンスを処理し、色付けする
     (add-hook 'inf-ruby-mode-hook 'ansi-color-for-comint-mode-on)
-  )
+    )
+
+  ;; robe を導入する
+  (when (require 'robe nil t)
+    (add-hook 'ruby-mode-hook
+              '(lambda ()
+                 (robe-mode)
+                 (ac-robe-setup)))
+    )
+
+  ;; smart-compile を導入する
+  (when (require 'smart-compile nil t)
+    (define-key ruby-mode-map (kbd "C-c c") 'smart-compile)
+    (define-key ruby-mode-map (kbd "C-c C-c") (kbd "C-c c C-m"))
+    (setq compilation-window-height 15)
+    )
 )
 
 ;;; my-inits-ruby-mode.el ends here
