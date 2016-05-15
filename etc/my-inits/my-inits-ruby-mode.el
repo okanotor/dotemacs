@@ -3,10 +3,6 @@
 ;;; Commentary:
 ;; Ruby 向け設定
 ;;
-;; inf-ruby, ruby-electric は ELPA からダウンロードしたものを使用する。
-;;
-;; inf-ruby, enhance-ruby-mode は **-autoloads.el で設定しているので、ここでの設定は不要
-;;
 ;; 使用前に、以下の gem を事前にインストールしておく
 ;; - rcodetools
 ;; - pry
@@ -78,6 +74,7 @@
 
   ;; robe を導入する
   (when (require 'robe nil t)
+    (define-key robe-mode-map (kbd "M-.") nil)
     (add-hook 'ruby-mode-hook
               '(lambda ()
                  (robe-mode)
