@@ -29,6 +29,17 @@
 
   ;; sql-indent の設定
   (when (require 'sql-indent nil t)
+
+    (setq sql-indent-first-column-regexp
+          (concat "\\(^\\s-*" (regexp-opt '(
+                                            "select" "update" "insert" "delete"
+                                            "union" "intersect"
+                                            "from" "where" "into" "group" "having" "order"
+                                            "set"
+                                            "create" "drop" "truncate" "alter" "grant" "revoke"
+                                            "with" "limit" "offset"
+                                            "--") t) "\\(\\b\\|\\s-\\)\\)\\|\\(^```$\\)"))
+
     (add-hook 'sql-mode-hook (function (lambda () (setq sql-indent-offset 2))))
     )
 
