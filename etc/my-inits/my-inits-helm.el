@@ -12,6 +12,10 @@
   (define-key global-map (kbd "C-x C-f") 'helm-find-files)
   (define-key helm-map (kbd "C-h") 'delete-backward-char)
   (define-key helm-find-files-map (kbd "C-h") 'delete-backward-char)
+
+  (when (require 'helm-descbinds nil t)
+    (helm-descbinds-mode)
+    )
   )
 
 ;;; my-inits-helm.el ends here
