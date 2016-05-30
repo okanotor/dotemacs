@@ -33,11 +33,14 @@
       auto-install
       browse-kill-ring
       color-moccur
+      ctable
+      dash
       descbinds-anything
       elscreen
       enh-ruby-mode
       ess
       ess-R-object-popup
+      git-commit
       gnugo
       graphviz-dot-mode
       helm
@@ -48,26 +51,34 @@
       irfc
       japanese-holidays
       julia-mode
+      magit
+      magit-popup
       markdown-mode
       markdown-mode+
       mic-paren
+      milkode
       muse
       noflet
       open-junk-file
       org
       popup
       quack
+      robe
       recentf-ext
       ruby-additional
       ruby-block
       ruby-electric
       rvm
       scheme-complete
+      seq
       sicp
+      smart-compile
       sql-indent
       sqlite
+      sqlup-mode
       viewer
       w3m
+      with-editor
       xpm
       yaml-mode
       yasnippet
