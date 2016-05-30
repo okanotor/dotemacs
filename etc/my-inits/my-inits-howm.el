@@ -12,7 +12,6 @@
 
 ;;; Code:
 
-;; 以下、my-inits-first-load.el からの移植
 (setq howm-keyword-file (locate-user-emacs-file "var/howm/howm-keys"))
 (setq howm-history-file (locate-user-emacs-file "var/howm/howm-history"))
 (setq howm-menu-lang 'ja)
