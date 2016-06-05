@@ -15,6 +15,17 @@
 
   ;; プロジェクトのメモファイルを開く関数を定義
   (when my-project-alist
+    (defun insert-project-memo-template (project date-string)
+      (interactive (list (completing-read "Project: " my-project-alist)
+                         (read-from-minibuffer "Date: " (format-time-string "%Y-%m-%d"))))
+      (insert "#+TITLE: " date-string "\n"
+              "\n"
+              "** keywords :noexport:\n"
+              "- " (cdr (assoc project my-project-alist)) "\n"
+              "- " date-string "\n"
+              "\n"
+              "** "))
+    
     (defun open-project-memo (project)
       (interactive (list (completing-read "Project: " my-project-alist)))
       (let* ((date-string (format-time-string "%Y-%m-%d"))
@@ -23,14 +34,7 @@
              (dir (file-name-directory path)))
         (make-directory dir t)
         (find-file-other-window path)
-        (unless exists
-          (insert "#+TITLE: " date-string "\n"
-                  "\n"
-                  "** keywords :noexport:\n"
-                  "- " (cdr (assoc project my-project-alist)) "\n"
-                  "- " date-string "\n"
-                  "\n"
-                  "** "))))
+        (unless exists (insert-project-memo-template project date-string))))
     )
 
   ;; プロジェクト関連ファイルを org-publish 対象にする
