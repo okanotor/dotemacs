@@ -10,7 +10,7 @@
 ;; 述語
 ;; Emacs バージョン判定
 ;; @see http://d.hatena.ne.jp/tomoya/20090807/1249601308
-(dolist (ver '("22" "23" "23.0" "23.1" "23.2" "23.3" "23.4" "24" "24.0" "24.1" "24.2" "24.3" "24.4" "24.5"))
+(dolist (ver '("22" "23" "23.0" "23.1" "23.2" "23.3" "23.4" "24" "24.0" "24.1" "24.2" "24.3" "24.4" "24.5" "25" "25.1"))
   (set (intern (concat "emacs" ver "-p"))
        (if (string-match (concat "^" ver) emacs-version)
            t
@@ -53,7 +53,7 @@
  meadow-p (featurep 'meadow)
  windows-p (or cygwin-p nt-p meadow-p)
  carbon-p (and darwin-p ws-mac-p emacs22-p)
- cocoa-p (and darwin-p ws-mac-p (or emacs23-p emacs24-p))
+ cocoa-p (and darwin-p ws-mac-p (or emacs23-p emacs24-p emacs25-p))
 )
 
 

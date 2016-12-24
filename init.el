@@ -9,6 +9,12 @@
 
 ;;; Code:
 
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+;(package-initialize)
+
 ;; emacs -q -l した時に、 user-emacs-directory が変わるようにする
 ;; @see http://blog.shibayu36.org/entry/2015/05/01/172215
 (when load-file-name

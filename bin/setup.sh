@@ -7,15 +7,15 @@
 ################################################################################
 declare -r EMACS_USER_DIR=~/.emacs.d
 
-declare -r EMACS_VERSION=24.5
-declare -r EMACS_PATCH_VERSION=5.17
+declare -r EMACS_VERSION=25.1
+declare -r EMACS_PATCH_VERSION=6.0
 
 declare -r RCODETOOLS_VERSION=0.8.5.0
 
 declare -r HOWM_VERSION=1.4.3
 
 declare -r SQLITE3_YEAR=2016
-declare -r SQLITE3_VERSION_X=12
+declare -r SQLITE3_VERSION_X=15
 declare -r SQLITE3_VERSION_Y=2
 declare -r SQLITE3_VERSION_Z=0
 
