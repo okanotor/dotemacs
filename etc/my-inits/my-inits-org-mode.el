@@ -59,7 +59,6 @@
 
   ;; MobileOrg
   ;;  (setq org-mobile-inbox-for-pull "~/doc/memo/howm/mobileorg/flagged.howm")
-  ;;  (setq org-mobile-inbox-for-pull "~/Documents/memo/mobileorg.txt")
   (setq org-mobile-inbox-for-pull (expand-file-name (concat my-memo-dir "/mobileorg.txt")))
   (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
 )

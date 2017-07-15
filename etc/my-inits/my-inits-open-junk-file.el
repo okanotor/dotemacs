@@ -22,9 +22,12 @@
       ("r" "#" "R" ("- R 起動 => M-x R"
                     "- 編集中のコードを実行 => C-c C-c"))
       ("rb" "#" "RUBY" ("- inf-ruby 起動 => M-x inf-ruby"
+                        "  - 最後の式を実行 => C-x C-e (ruby-send-last-sexp)"
+                        "  - ブロック実行 => C-c C-b (ruby-send-block)"
+                        "  - リージョン実行 => C-c C-r (ruby-send-region)"
                         "- robe 起動 (事前に inf-ruby を起動しておく) => M-x robe-start"
                         "- rcodetools関連"
-                        "  - コメント挿入 => M-x を2回"
+                        "  - コメント挿入 => M-; を2回"
                         "  - xmpfilter実行 => C-Return"))
       ("sql" "--" "SQL" ("- SQLクライアント起動 => M-x my-sql-connect"
                          "  - 接続情報は sql-connection-alist に書いておく"

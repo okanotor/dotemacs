@@ -19,13 +19,13 @@
   (setq ruby-insert-encoding-magic-comment nil)
 
   ;; ruby-electric を導入する
-  (when (require 'ruby-electric nil t)
-    (add-hook 'ruby-mode-hook
-              '(lambda ()
-                 (ruby-electric-mode t)
-                 )
-              )
-    )
+  ;; (when (require 'ruby-electric nil t)
+  ;;   (add-hook 'ruby-mode-hook
+  ;;             '(lambda ()
+  ;;                (ruby-electric-mode t)
+  ;;                )
+  ;;             )
+  ;;   )
 
   ;; ruby-block を導入する
   ;; end に対応する行をハイライトする
@@ -35,8 +35,8 @@
     )
   
   ;; rbenv を導入する
-  (when (require 'rbenv nil t)
-    )
+  ;; (when (require 'rbenv nil t)
+  ;;   )
 
   ;; rcodetools を導入する
   ;; @see http://qiita.com/ironsand/items/ce7c02eb46fcc25a438b

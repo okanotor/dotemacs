@@ -13,7 +13,8 @@
 
 ;; elscreen の呼び出し
 (cond (emacs23-p (require 'elscreen))
-      (emacs24-p (elscreen-start)))
+      (emacs24-p (elscreen-start))
+      (emacs25-p (elscreen-start)))
 
 ;; キーバインディングの設定
 (when (featurep 'elscreen)

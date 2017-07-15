@@ -9,7 +9,6 @@
 ;;; Code:
 
 (when (require 'rfc nil t)
-  ;;  (setq rfc-url-save-directory "~/Documents/rfc")
   (setq rfc-url-save-directory (locate-user-emacs-file "var/rfc"))
   (setq rfc-index-url "http://www.ietf.org/rfc/rfc-index.txt")
   (setq rfc-archive-alist (list 

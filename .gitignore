@@ -9,5 +9,7 @@
 /tmp
 /usr/local/src/emacs*
 /usr/local/src/sqlite*
+/usr/local/src/nethack*
+/usr/local/src/orgmode*
 /var
 
