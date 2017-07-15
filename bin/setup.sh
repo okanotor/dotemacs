@@ -7,16 +7,16 @@
 ################################################################################
 declare -r EMACS_USER_DIR=~/.emacs.d
 
-declare -r EMACS_VERSION=25.1
-declare -r EMACS_PATCH_VERSION=6.0
+declare -r EMACS_VERSION=25.2
+declare -r EMACS_PATCH_VERSION=6.4
 
 declare -r RCODETOOLS_VERSION=0.8.5.0
 
-declare -r HOWM_VERSION=1.4.3
+declare -r HOWM_VERSION=1.4.4
 
-declare -r SQLITE3_YEAR=2016
-declare -r SQLITE3_VERSION_X=15
-declare -r SQLITE3_VERSION_Y=2
+declare -r SQLITE3_YEAR=2017
+declare -r SQLITE3_VERSION_X=19
+declare -r SQLITE3_VERSION_Y=3
 declare -r SQLITE3_VERSION_Z=0
 
 
@@ -378,7 +378,7 @@ main() {
   done
 
   # check if installed command.
-  for command in git wget nkf patch; do
+  for command in git wget nkf xz patch; do
     has_installed ${command}
   done
   
