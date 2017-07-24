@@ -35,7 +35,7 @@
       color-moccur
       ctable
       dash
-      descbinds-anything
+;      descbinds-anything
       elscreen
       enh-ruby-mode
       ess
@@ -45,6 +45,7 @@
       graphviz-dot-mode
       helm
       helm-core
+      helm-descbinds
       hiwin
       htmlize
       inf-ruby
